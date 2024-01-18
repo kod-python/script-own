@@ -99,7 +99,7 @@ myNUm = myNUm.toLocaleString("undefine", {style:"unit", unit:"celsius"})
 
 document.getElementById("localTime").innerHTML =`the persentage is ${myNUm}`
 
-
+// tolocalstring method ends here
 
 // Guessing game
 
@@ -121,4 +121,139 @@ document.getElementById("submitButton").onclick = function (){
    else {
     alert("Too large")
    }
-}
+};
+
+// gaming ends here
+
+
+// Temperature checking
+
+document.getElementById("submittButton").onclick = function (){
+
+     let temp;
+
+     if(document.getElementById("cButton").checked){
+        temp = document.getElementById("textLabel").value;
+        temp = Number(temp);
+        temp = toCelsius(temp);
+        document.getElementById("tempLabel").innerHTML = `${temp} C`
+     }
+
+
+     else if(document.getElementById("fButton").checked){
+        temp = document.getElementById("textLabel").value;
+        temp = Number(temp);
+        temp = toFahrenheit(temp);
+        document.getElementById("tempLabel").innerHTML = `${temp} F`
+     }
+
+
+     else{
+       
+        document.getElementById("tempLabel").innerHTML = `select a unit`
+     }
+
+
+
+
+
+
+    }
+
+
+    function toCelsius(temp){
+        return (temp - 32) * (5/9);
+    };
+
+    function toFahrenheit(temp){
+        return temp * 9 / 5 + 32;
+    };
+
+    // temperature ends here
+    
+
+    // array starts here
+
+    let fruits = ["apple","banana","watermelon"]
+
+    fruits[0] = ["cocconut"]
+    // add items from the end
+    fruits.push("lemon")
+    // delete items from the end
+    fruits.pop()
+    // add element from the begging
+    fruits.unshift("mango") 
+    
+    // remove methods from beggining
+    fruits.shift()
+
+    let lenght = fruits.length
+    let index = fruits.indexOf("banana")
+
+
+    console.log(fruits);
+    console.log(lenght);
+    console.log(index);
+
+    document.getElementById("array").innerHTML = `${fruits} ${length} ${index}`
+
+// for statement starts here
+    let prices = [5,7,8,9,20];
+
+    for(let price of prices){
+        console.log(price)
+    }
+
+    let things = ["mango","apple","banana","watermelon"]
+    //  arrange from frist alphabet
+     things.sort()
+     things.sort().reverse()
+    for(let thing of things){
+        console.log(thing)
+    }
+    
+    document.getElementById("array2").innerHTML = `${prices} ${things}`
+
+
+    // 2d arrays starts here
+    let meat = ["egg","fish","chicken"]
+    let vegtable = ["carrot","onions","potatoe"]
+    let ingre = ["ginger","garlic","pepre"]
+
+    let grocery = [meat,vegtable,ingre]
+    
+    grocery.sort()
+
+    grocery[2][1]= ["wintia"]
+   for (let list of grocery){
+    for(let food of list){
+        console.log(food)
+    }
+   }
+
+   document.getElementById("array3").innerHTML = `${grocery}`
+
+    // 2d ends here
+
+
+// spread operator
+
+let numbers = [1,2,3,4,5,6,7,8,10]
+
+let num = Math.max(...numbers)
+console.log(num)
+
+let class1 = ["sponge","akoutsa","ama","yaw"]
+let class2 = ["akpa","yibor","kalami","afi"]
+let allclass =[class1,class2]
+class1.push(...class2)
+
+console.log(...class1)
+
+document.getElementById("array4").innerHTML = `${num} ${allclass}`
+// spread operator ends here
+
+
+ // for ends here 
+
+// array ends here
